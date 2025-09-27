@@ -26713,10 +26713,9 @@ document.getElementById('form_record').addEventListener('submit', /*#__PURE__*/f
           event.preventDefault(); // Предотвращаем стандартную отправку формы
           _context.prev = 1;
           // Этап 1: Сбор данных формы
-          formData = new FormData(this);
-          console.log('Данные формы:', Object.fromEntries(formData.entries()));
+          formData = new FormData(this); // console.log('Данные формы:', Object.fromEntries(formData.entries()));
           // Этап 2: Отправка данных на сервер
-          _context.next = 6;
+          _context.next = 5;
           return fetch('/form-record', {
             method: 'POST',
             body: formData,
@@ -26724,49 +26723,108 @@ document.getElementById('form_record').addEventListener('submit', /*#__PURE__*/f
               'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
           });
-        case 6:
+        case 5:
           response = _context.sent;
           if (!response.ok) {
-            _context.next = 16;
+            _context.next = 14;
             break;
           }
-          _context.next = 10;
+          _context.next = 9;
           return response.json();
-        case 10:
+        case 9:
           result = _context.sent;
-          console.log('Ответ сервера:', result);
+          // console.log('Ответ сервера:', result);
 
           // Этап 4: Обновление интерфейса после успешного ответа
           alert('Заявка успешно отправлена!');
           this.reset(); // Очистка полей формы
-          _context.next = 21;
-          break;
-        case 16:
           _context.next = 18;
+          break;
+        case 14:
+          _context.next = 16;
           return response.text();
-        case 18:
+        case 16:
           errorResponse = _context.sent;
           // Получаем текстовую версию ответа
-          console.error('Ошибка отправки:', errorResponse);
+          // console.error('Ошибка отправки:', errorResponse);
           alert('Возникла ошибка при отправке заявки.');
-        case 21:
-          _context.next = 27;
+        case 18:
+          _context.next = 23;
           break;
-        case 23:
-          _context.prev = 23;
+        case 20:
+          _context.prev = 20;
           _context.t0 = _context["catch"](1);
-          console.error('Общая ошибка:', _context.t0.message);
+          // console.error('Общая ошибка:', error.message);
           alert('Произошла непредвиденная ошибка.');
-        case 27:
+        case 23:
         case "end":
           return _context.stop();
       }
-    }, _callee, this, [[1, 23]]);
+    }, _callee, this, [[1, 20]]);
   }));
   return function (_x) {
     return _ref.apply(this, arguments);
   };
 }());
+document.addEventListener("DOMContentLoaded", function () {
+  // Найти все формы на странице
+  var forms = document.querySelectorAll("#quizForm");
+  forms.forEach(function (form) {
+    form.addEventListener("submit", /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(event) {
+        var formData, response, result;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              event.preventDefault(); // Отменяем стандартную отправку формы
+              _context2.prev = 1;
+              // Собираем данные формы
+              formData = new FormData(form); // Отправляем форму асинхронно
+              _context2.next = 5;
+              return fetch("/form-record", {
+                // Можно заменить на ваш конечный адрес обработки формы
+                method: "POST",
+                body: formData,
+                headers: {
+                  "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+                }
+              });
+            case 5:
+              response = _context2.sent;
+              if (response.ok) {
+                _context2.next = 8;
+                break;
+              }
+              throw new Error("HTTP error! Status: ".concat(response.status));
+            case 8:
+              _context2.next = 10;
+              return response.json();
+            case 10:
+              result = _context2.sent;
+              // Сообщаем пользователю о результате
+              alert(result.success ? "Заявка успешно отправлена!" : "Ошибка отправки.");
+
+              // Очищаем форму
+              form.reset();
+              _context2.next = 19;
+              break;
+            case 15:
+              _context2.prev = 15;
+              _context2.t0 = _context2["catch"](1);
+              console.error(_context2.t0);
+              alert("Что-то пошло не так при отправке заявки!");
+            case 19:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2, null, [[1, 15]]);
+      }));
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+  });
+});
 
 // АльпайнJS хук для закрытия модала
 document.addEventListener('close-modal', function () {

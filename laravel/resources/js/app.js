@@ -43,6 +43,48 @@ document.getElementById('form_record').addEventListener('submit', async function
 }
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Найти все формы на странице
+    const forms = document.querySelectorAll("#quizForm");
+
+    forms.forEach((form) => {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault(); // Отменяем стандартную отправку формы
+
+            try {
+                // Собираем данные формы
+                const formData = new FormData(form);
+
+                // Отправляем форму асинхронно
+                const response = await fetch("/form-record", { // Можно заменить на ваш конечный адрес обработки формы
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+                    },
+                });
+
+                // Проверяем успешность ответа
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+                // Парсим JSON ответ
+                const result = await response.json();
+
+                // Сообщаем пользователю о результате
+                alert(result.success ? "Заявка успешно отправлена!" : "Ошибка отправки.");
+
+                // Очищаем форму
+                form.reset();
+
+            } catch (err) {
+                console.error(err);
+                alert("Что-то пошло не так при отправке заявки!");
+            }
+        });
+    });
+});
+
 // АльпайнJS хук для закрытия модала
 document.addEventListener('close-modal', () => {
     Alpine.$data.showModal = false;

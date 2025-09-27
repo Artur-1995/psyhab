@@ -32,3 +32,14 @@ input[type="tel"]:focus {
 input[type="tel"].error {
     border-color: #ff0000;
 }
+
+.py-16 {
+  padding-top: 0rem;
+  padding-bottom: 4rem;
+}
+
+img,
+video {
+  max-width: 95%;
+  height: auto;
+}

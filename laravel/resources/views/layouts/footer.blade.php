@@ -1,5 +1,5 @@
 <footer class="bg-white border-t shadow-md">
-    <div class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8">
+    <div class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8">
         <div class="space-y-4 text-center">
             <h3 class="font-semibold text-lg mb-2">Контакты</h3>
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone inline-block mr-2 align-middle">
@@ -16,7 +16,7 @@
                     <path d="M3 10h18"></path>
                 </svg> Москва, ул. Тверская, д. 1</p>
         </div>
-        <div class="space-y-4 text-center">
+        {{-- <div class="space-y-4 text-center">
             <h3 class="font-semibold text-lg mb-2">Навигация</h3>
             <ul class="list-none p-0 m-0">
                 <li><a href="/" class="hover:text-blue-600 transition-colors block">Главная</a></li>
@@ -24,12 +24,12 @@
                 <li><a href="/blog" class="hover:text-blue-600 transition-colors block">Блог</a></li>
                 <li><a href="/about-us" class="hover:text-blue-600 transition-colors block">О нас</a></li>
             </ul>
-        </div>
+        </div> --}}
         <div class="space-y-4 text-center">
             <h3 class="font-semibold text-lg mb-2">Поддержка</h3>
             <ul class="list-none p-0 m-0">
-                <li><a href="/faq" class="hover:text-blue-600 transition-colors block">FAQ</a></li>
-                <li><a href="/support" class="hover:text-blue-600 transition-colors block">Техподдержка</a></li>
+                {{-- <li><a href="/faq" class="hover:text-blue-600 transition-colors block">FAQ</a></li> --}}
+                {{-- <li><a href="/support" class="hover:text-blue-600 transition-colors block">Техподдержка</a></li> --}}
                 <li><a href="/privacy-policy" class="hover:text-blue-600 transition-colors block">Политика конфиденциальности</a></li>
             </ul>
         </div>
