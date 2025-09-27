@@ -1,0 +1,32 @@
+mysql-data/
+# System Files
+.DS_Store
+Thumbs.db
+
+# Laravel Directories & Files within 'laravel' folder
+laravel/storage/logs/*.log
+laravel/bootstrap/cache/*
+laravel/storage/framework/cache/data/*
+laravel/storage/framework/views/*
+laravel/storage/framework/sessions/*
+laravel/storage/framework/tests/*
+
+# Environment Configurations
+laravel/.env*
+laravel/.env.example.local
+laravel/.env.testing
+
+# Dependency Management
+laravel/vendor/
+laravel/node_modules/
+laravel/npm-debug.log
+laravel/yarn-error.log
+
+# Build Artifacts
+laravel/public/hot
+laravel/resources/lang/vendor
+laravel/routes/cached.php
+
+# Autoload & Caches
+laravel/composer.lock
+laravel/laravel-vapor-stubs/**
