@@ -4,29 +4,29 @@ mysql-data/
 Thumbs.db
 
 # Laravel Directories & Files within 'laravel' folder
-laravel/storage/logs/*.log
-laravel/bootstrap/cache/*
-laravel/storage/framework/cache/data/*
-laravel/storage/framework/views/*
-laravel/storage/framework/sessions/*
-laravel/storage/framework/tests/*
+storage/logs/*.log
+bootstrap/cache/*
+storage/framework/cache/data/*
+storage/framework/views/*
+storage/framework/sessions/*
+storage/framework/tests/*
 
 # Environment Configurations
-laravel/.env*
-laravel/.env.example.local
-laravel/.env.testing
+.env*
+.env.example.local
+.env.testing
 
 # Dependency Management
-laravel/vendor/
-laravel/node_modules/
-laravel/npm-debug.log
-laravel/yarn-error.log
+vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
 
 # Build Artifacts
-laravel/public/hot
-laravel/resources/lang/vendor
-laravel/routes/cached.php
+public/hot
+resources/lang/vendor
+routes/cached.php
 
 # Autoload & Caches
-laravel/composer.lock
-laravel/laravel-vapor-stubs/**
+composer.lock
+laravel-vapor-stubs/**
