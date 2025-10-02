@@ -84,16 +84,25 @@ video {
             z-index: 40; /* Подложка должна быть под модальным окном */
         }
 
-        /* Сам модал, белый и чистый */
+        /* Светлое модальное окно */
         .modal-container {
             position: fixed;
-            top: 50%;
+            top: 45%; /* Верхний отступ от экрана */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, calc(-50% + 10vh)); /* Центрируем окно с учётом нового отступа */
             background-color: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 50; /* Модальное окно должно быть над подложкой */
-            width: 33%; /* Одна треть экрана */
+            width: 50%; /* Одна треть экрана */
         }
+
+.no-scroll {
+    overflow: hidden;
+}
+.modal-content {
+    max-height: 80vh; /* Максимальная высота модального окна */
+    overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое длинное */
+    padding: 2rem;
+}
