@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\FormController;
-
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SuggestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +34,12 @@ Route::get('/', function () {
 Route::get('/auth', function () {
     return view('auth');
 });
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog1', function () {
+    return view('blog1');
+})->name('blog1');
+
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -44,7 +49,15 @@ Route::get('/login', function () {
 // Route::post('/form-record', [ApplicationController::class, 'store'])->name('form.record');
 
 
+// Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
+
 Route::get('/form-record', [FormController::class, 'show'])->name('form');
 
 // Маршрут для отправки формы (добавьте метод submit в контроллер)
 Route::post('/submit-form', [FormController::class, 'store'])->name('form.store');
+
+// Поиск статей
+Route::get('/blog/suggestions/{query}', [BlogController::class, 'getSuggestions'])->name('suggestions');
+
+// Переход к статье
+Route::get('/blog/{id}-{slug?}', [BlogController::class, 'showArticle'])->name('article.show');

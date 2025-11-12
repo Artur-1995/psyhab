@@ -16,6 +16,6 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .styles([
-       'resources/css/custom_styles/home.css'
+       'resources/css/custom_styles/home.css',
+       'resources/css/custom_styles/blog.css'
    ], 'public/css/custom_styles.css'); // добавляем новый css-файл
-   

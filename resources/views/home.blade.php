@@ -18,9 +18,8 @@
                 </div>
             </div>
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1754294437684-7898b3701ac7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVyYXB5JTIwcHN5Y2hvbG9neSUyMHBlYWNlZnVzfGVufDF8fHx8MTc1Njg0MTU3OXww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Психологическая консультация" class="rounded-2xl shadow-2xl w-full">
-            </div>
+    <img src="/storage/images/home_image.png" alt="Психологическая консультация" class="rounded-2xl shadow-2xl w-full">
+</div>
         </div>
     </section>
     <section class="container mx-auto px-4 py-16">

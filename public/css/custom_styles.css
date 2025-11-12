@@ -40,8 +40,11 @@ input[type="tel"].error {
 
 img,
 video {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
+}
+.h-64 {
+  height: 25rem;
 }
 
 /* Стили для кнопки */
