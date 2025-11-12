@@ -40,11 +40,8 @@ input[type="tel"].error {
 
 img,
 video {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
-}
-.h-64 {
-  height: 25rem;
 }
 
 /* Стили для кнопки */
@@ -108,4 +105,13 @@ video {
     max-height: 80vh; /* Максимальная высота модального окна */
     overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое длинное */
     padding: 2rem;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+.h-64 {
+  height: 16rem;
 }
