@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\SuggestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
