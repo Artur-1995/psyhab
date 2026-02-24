@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApplicationSubmitted;
 use App\Models\Application;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use InvalidArgumentException;
 
 class FormController extends Controller
 {
@@ -15,14 +19,24 @@ class FormController extends Controller
         return response()->view('components.modal1')->setStatusCode(200);
     }
 
-    // app/Http/Controllers/YourController.php
+    public function tariffInfo($type)
+{
+    switch ($type) {
+        case 'consultation':
+            return view('sections.consultation_tariff');
+        case 'weekly_subscription':
+            return view('sections.weekly_subscription_tariff');
+        default:
+            throw new InvalidArgumentException("Неверный тип тарифа '$type'");
+    }
+}
 
-    // Контроллер
+    // Метод тправки заявки с сайта
     public function store(Request $request)
     {
-        DB::beginTransaction(); // Начинаем транзакцию для сохранения целостности данных
-
         try {
+            DB::beginTransaction(); // Начинаем транзакцию для сохранения целостности данных
+
             // Валидация данных
             $validator = Validator::make($request->all(), [
                 'for' => 'nullable|max:255',
@@ -35,9 +49,10 @@ class FormController extends Controller
                 return response()->json(['errors' => $validator->errors()], 422); // Код состояния 422 Unprocessable Entity
             }
 
-            // Сохранение данных
-            Application::create($request->only('for', 'phone'));
 
+            // Сохранение данных
+            Application::create($request->only('for', 'phone', 'email'));
+            Mail::to('info@psyhab.ru')->send(new ApplicationSubmitted($request->only('for', 'phone', 'email')));
             DB::commit(); // Завершаем транзакцию
 
             // Возвращаем успешный ответ

@@ -49,14 +49,9 @@ class Article extends Model
         'title',
         'description',
         'content',
-        'author',
+        'user_id',
         'category',
-        'subcategory',
-        'publication_date',
-        'reading_time',
-        'views_count',
-        'likes_count',
-        'comments_count'
+        'views',
     ];
 
     public function getPublicationDateAttribute($value)
@@ -78,5 +73,10 @@ class Article extends Model
         ];
 
         return $date->format('d') . ' ' . $months[$date->format('F')] . ' ' . $date->format('Y');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

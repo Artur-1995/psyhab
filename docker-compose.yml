@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: laravel-app
+    container_name: laravel-psyhab-app
     volumes:
       - ./:/var/www/html
     networks:
@@ -13,7 +13,7 @@ services:
 
   nginx:
     image: nginx:stable-alpine
-    container_name: laravel-nginx
+    container_name: laravel-psyhab-nginx
     ports:
       - "8001:80"
     volumes:
@@ -26,7 +26,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: laravel-mysql
+    container_name: laravel-psyhab-mysql
     environment:
       - MYSQL_DATABASE=Laravel
       - MYSQL_ROOT_PASSWORD=root
@@ -41,11 +41,11 @@ services:
 
   pma:
     image: phpmyadmin
-    container_name: laravel-pma
+    container_name: laravel-psyhab-pma
     ports:
       - "8081:80"
     environment:
-      - PMA_HOST=laravel-mysql
+      - PMA_HOST=laravel-psyhab-mysql
       - UPLOAD_LIMIT=1000000000
     networks:
       - laravel-network

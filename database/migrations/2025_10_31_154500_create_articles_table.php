@@ -16,19 +16,16 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             // Основные поля
             $table->bigIncrements('id'); // Уникальный ID
-            $table->string('title')->nullable(); // Заголовок статьи
-            $table->text('description')->nullable(); // Краткое описание
-            $table->longText('content')->nullable(); // Основное содержание статьи
-            $table->string('author')->nullable(); // Автор статьи
-            $table->string('category')->nullable(); // Категория
-            $table->string('subcategory')->nullable(); // Подкатегория
+            // Связи
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Внешний ключ, связанный с таблицей users
+            $table->string('title'); // Заголовок статьи
+            $table->text('description'); // Краткое описание
+            $table->longText('content'); // Основное содержание статьи
+            $table->string('category'); // Категория
+            $table->enum('status', ['published', 'draft']);
 
             // Метрики и статистика
-            $table->date('publication_date')->nullable(); // Дата публикации
-            $table->time('reading_time')->nullable(); // Рекомендуемое время чтения
-            $table->integer('views_count')->default(0); // Просмотры
-            $table->integer('likes_count')->default(0); // Лайки
-            $table->integer('comments_count')->default(0); // Комментарии
+            $table->integer('views')->default(0);
 
             // Временные метки
             $table->timestamps();
