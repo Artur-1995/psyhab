@@ -33,9 +33,9 @@
 
         <main class="py-10">
             <section class="max-w-screen-md mx-auto text-center">
-                <h1 class="text-4xl font-bold text-gray-900">Добро пожаловать на сайт Психаб!</h1>
+                <h1 class="text-4xl font-bold text-gray-900">Добро пожаловать на сайт PSYHAB!</h1>
                 <p class="my-6 text-gray-600 leading-relaxed">Профессиональная помощь психолога онлайн.</p>
-                <button id="contact-button" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Связаться с нами</button>
+                <button id="contact-button" class="inline-block bg-blue-500 hover:bg-myCustomColor text-white font-semibold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Связаться с нами</button>
             </section>
             <!-- Hero Section -->
             <!-- Hero Section -->
@@ -54,7 +54,7 @@
                             Онлайн и офлайн консультации, индивидуальный подход к каждому клиенту.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <Button size="lg" class="bg-blue-600 hover:bg-blue-700">
+                            <Button size="lg" class="bg-myCustomColor hover:bg-myCustomColor-darkened">
                                 Записаться на консультацию
                             </Button>
                             <Button variant="outline" size="lg">
@@ -65,7 +65,8 @@
 
                     <!-- Правый столбец с картинкой -->
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1754294437684-7898b3701ac7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVyYXB5JTIwcHN5Y2hvbG9neSUyMHBlYWNlZnVsfGVufDF8fHx8MTc1Njg0MTU3OXww&ixlib=rb-4.1.0&q=80&w=1080"
+                        <img
+                        {{-- src="https://images.unsplash.com/photo-1754294437684-7898b3701ac7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVyYXB5JTIwcHN5Y2hvbG9neSUyMHBlYWNlZnVsfGVufDF8fHx8MTc1Njg0MTU3OXww&ixlib=rb-4.1.0&q=80&w=1080" --}}
                             alt="Психологическая консультация"
                             class="rounded-2xl shadow-2xl w-full" />
                     </div>

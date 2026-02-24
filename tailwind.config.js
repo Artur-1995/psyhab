@@ -14,6 +14,11 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+        customGray: '#dad5d2', // Называем наш цвет удобным именем
+        'custom-color': '#51667f',
+        'custom-color-darker': '#667283' // Немного затемнённая версия
+      },
         },
     },
 

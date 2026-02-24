@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(['resources/js/serviceWorker.js', 'resources/js/app.js'], 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('tailwindcss'),
     ])
@@ -19,3 +19,4 @@ mix.js('resources/js/app.js', 'public/js')
        'resources/css/custom_styles/home.css',
        'resources/css/custom_styles/blog.css'
    ], 'public/css/custom_styles.css'); // добавляем новый css-файл
+

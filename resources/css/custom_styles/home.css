@@ -106,3 +106,54 @@ video {
     overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое длинное */
     padding: 2rem;
 }
+
+.pt-6 {
+    padding-top: 0rem;
+}
+
+@media (max-width: 640px) {
+    .px-40 {
+        padding-left: inherit;
+        padding-right: 0rem;
+    }
+}
+
+/* Согласие на использование куки файлов CSS для всплывающего окна */
+.messages_cookies {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+    background-color: rgba(255, 255, 255, 0.9); /* Прозрачность фона */
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+    border-radius: 0; /* Прямоугольные углы */
+}
+
+.messages_cookies-wrp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.agree-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgba(115, 130, 151, 0.8); /* Прозрачный фон кнопки */
+    color: white;
+    border: none;
+    border-radius: 0; /* Прямоугольные углы кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agree-btn:hover {
+    background-color: rgba(94, 109, 130, 0.8); /* Прозрачный цвет при наведении */
+}
+
+.hidden {
+    display: none !important;
+}

@@ -2,7 +2,7 @@
 
 <!-- Кнопка для открытия модала -->
 <button id="openModalBtn" @click="showModal = true"
-    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-white h-10 px-6 text-base bg-blue-600 hover:bg-blue-700">Записаться
+    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-white h-10 px-6 text-base bg-myCustomColor hover:bg-myCustomColor-darkened">Записаться
     на консультацию</button>
     <!-- Модальное окно -->
     <div x-show="showModal" style="display:none;" x-transition:enter="ease-out duration-300"
@@ -17,9 +17,9 @@
                 <div class="flex items-center space-x-2">
                     <div
                         class="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-semibold">П</span>
+                        <span class="text-white font-semibold">P</span>
                     </div>
-                    <span class="text-xl font-semibold text-gray-900">Психаб</span>
+                    <span class="text-xl font-semibold text-gray-900">PSYHAB</span>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                         class="w-full border border-gray-300 rounded-md p-2" required>
                 </div>
                 <button type="submit"
-                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-white h-10 px-6 text-base bg-blue-600 hover:bg-blue-700">
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-white h-10 px-6 text-base bg-myCustomColor hover:bg-myCustomColor-darkened">
                     Отправить заявку
                 </button>
             </form>

@@ -1,4 +1,4 @@
-<div data-slot="card" class="flex flex-col gap-6 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 border-0 text-white">
+<div data-slot="card" class="flex flex-col gap-6 rounded-xl bg-custom-color hover:bg-custom-color-darker border-0 text-white">
         <div data-slot="card-content" class="[&:last-child]:pb-6 p-12 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-16 h-16 mx-auto mb-6 text-white">
                 <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
@@ -18,10 +18,10 @@
                         <!-- Логотип слева -->
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <div
-                                style="width: 40px; height: 40px; background: linear-gradient(to bottom right, #007BFF, #6610f2); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                <span style="color: white; font-weight: 600;">П</span>
+                                style="width: 40px; height: 40px; background: linear-gradient(to bottom right, #738297, #d9dee6); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-weight: 600;">P</span>
                             </div>
-                            <span style="font-size: 18px; font-weight: 600; color: #333;">Психаб</span>
+                            <span style="font-size: 18px; font-weight: 600; color: #333;">PSYHAB</span>
                         </div>
                     </div>
 
@@ -37,7 +37,7 @@
                                 required>
                         </div>
                         <button type="submit"
-                            style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; border-radius: 10px; font-weight: 500; transition: all 0.2s; pointer-events: auto; opacity: 1; outline: none; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); text-decoration: none; color: white; height: 40px; padding: 0 20px; font-size: 16px; background-color: #007BFF; border: none; cursor: pointer;">Отправить
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; border-radius: 10px; font-weight: 500; transition: all 0.2s; pointer-events: auto; opacity: 1; outline: none; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); text-decoration: none; color: white; height: 40px; padding: 0 20px; font-size: 16px; background-color: #738297; border: none; cursor: pointer;">Отправить
                             заявку</button>
                     </form>
                     </div>
@@ -75,16 +75,6 @@
         } catch (error) {
             alert('Произошла непредвиденная ошибка.');
         }
-    });
-
-    // Маска номера телефона
-    document.querySelectorAll('input[type="tel"]').forEach(function (input) {
-        Inputmask({
-            mask: '+7 (999) 999-99-99',
-            placeholder: ' ',
-            clearIncomplete: true,
-            clearMaskOnLostFocus: true,
-        }).mask(input);
     });
 });
 </script>

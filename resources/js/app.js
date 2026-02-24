@@ -10,7 +10,6 @@ Alpine.start();
             console.log("Поиск элемента:", searchEl);
 
             if (!searchEl) {
-                console.error("Элемент поиска не найден!");
                 return;
             }
 
@@ -65,3 +64,31 @@ Alpine.start();
                 console.log("Новый текст в поле поиска:", this.value);
             });
         });
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            console.log(navigator.serviceWorker);
+            navigator.serviceWorker.register('/js/serviceWorker.js')
+            .then(registration => {
+                console.log('Service Worker зарегистрирован:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Ошибка регистрации Service Worker:', error);
+            });
+        });
+    }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const agreeButton = document.querySelector('.agree-btn');
+    agreeButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('cookie-banner').classList.add('hidden');
+        fetch('/accept-cookies', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            },
+        }).then(response => response.json())
+            .catch(error => console.error('Ошибка:', error));
+    });
+});

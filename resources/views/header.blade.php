@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-2">
             <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-semibold">П</span>
+                <span class="text-white font-semibold">P</span>
             </div>
             <span class="text-xl font-semibold text-gray-900">Психолог Онлайн</span>
         </div>

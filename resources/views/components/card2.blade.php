@@ -17,10 +17,10 @@
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
                 <!-- Логотип слева -->
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 40px; height: 40px; background: linear-gradient(to bottom right, #007BFF, #6610f2); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                        <span style="color: white; font-weight: 600;">П</span>
+                    <div style="width: 40px; height: 40px; background: linear-gradient(to bottom right, #738297, #d9dee6); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: white; font-weight: 600;">P</span>
                     </div>
-                    <span style="font-size: 18px; font-weight: 600; color: #333;">Психаб</span>
+                    <span style="font-size: 18px; font-weight: 600; color: #333;">PSYHAB</span>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                     <label for="phone" style="display: block; color: #666; font-weight: 600; margin-bottom: 10px;">Ваш номер телефона</label>
                     <input type="tel" id="phone2" name="phone" style="width: 100%; border: 1px solid #ccc; border-radius: 5px; padding: 10px; color: black;" required>
                 </div>
-                <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; border-radius: 10px; font-weight: 500; transition: all 0.2s; pointer-events: auto; opacity: 1; outline: none; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); text-decoration: none; color: white; height: 40px; padding: 0 20px; font-size: 16px; background-color: #007BFF; border: none; cursor: pointer;">Отправить заявку</button>
+                <button type="submit" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; border-radius: 10px; font-weight: 500; transition: all 0.2s; pointer-events: auto; opacity: 1; outline: none; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); text-decoration: none; color: white; height: 40px; padding: 0 20px; font-size: 16px; background-color: #738297; border: none; cursor: pointer;">Отправить заявку</button>
             </form>
         </div>
     </div>
