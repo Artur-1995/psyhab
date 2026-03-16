@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CookieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -37,7 +38,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 // Работа с куки файлами
-Route::post('/accept-cookies', [\App\Http\Controllers\CookieController::class, 'store'])->name('accept.cookies');
+Route::post('/cookies-accept', [CookieController::class, 'store'])->name('cookies.accept');
+Route::post('/cookies-check', [CookieController::class, 'check'])->name('cookies.check');
+Route::post('/cookies-close', [CookieController::class, 'destroy'])->name('cookies.close');
+
 
 // Вывод информации в блоке тариф на главной странице
 Route::get('/tariff-info/{type}', [ApplicationController::class, 'tariffInfo'])->name('home.tariffInfo');
@@ -45,18 +49,18 @@ Route::get('/tariff-info/{type}', [ApplicationController::class, 'tariffInfo'])-
 // Тариф подписка на неделю
 Route::post('/consultation-form', [LoginController::class, 'consultationForm'])->name('home.consultationForm');
 
-Route::get('/auth', [LoginController::class, 'index'])->name('login');
-// // Аутентификация пользователя
-Route::get('/auth-form', [LoginController::class, 'showloginForm'])->name('login.form');
-Route::post('/auth', [LoginController::class, 'authenticate'])->name('login.auth');
-// // Аутентификация пользователя
-Route::get('/register-form', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
-Route::post('/register', [RegisterController::class, 'storeUser'])->name('register.store');
+// Route::get('/auth', [LoginController::class, 'index'])->name('login');
+// // // Аутентификация пользователя
+// Route::get('/auth-form', [LoginController::class, 'showloginForm'])->name('login.form');
+// Route::post('/auth', [LoginController::class, 'authenticate'])->name('login.auth');
+// // // Аутентификация пользователя
+// Route::get('/register-form', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
+// Route::post('/register', [RegisterController::class, 'storeUser'])->name('register.store');
 
-// // Роут выхода (если необходим)
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-// // Роут выхода (если необходим)
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+// // // Роут выхода (если необходим)
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// // // Роут выхода (если необходим)
+// Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 // // Личная информация
 // Route::get('/profile/personal', [ProfileController::class, 'showPersonalForm'])->name('profile.personal');
 // Route::post('/profile/personal', [ProfileController::class, 'updatePersonal'])->name('profile.updatePersonal');

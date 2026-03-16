@@ -11,12 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js(['resources/js/serviceWorker.js', 'resources/js/app.js'], 'public/js')
+mix.js('resources/js/app.js', 'public/js').version()
     .postCss('resources/css/app.css', 'public/css', [
         require('tailwindcss'),
     ])
+    .version()
     .styles([
        'resources/css/custom_styles/home.css',
        'resources/css/custom_styles/blog.css'
-   ], 'public/css/custom_styles.css'); // добавляем новый css-файл
+   ], 'public/css/custom_styles.css')
+   .version(); // добавляем новый css-файл
 

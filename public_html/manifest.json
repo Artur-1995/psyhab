@@ -1,0 +1,33 @@
+{
+  "short_name": "psyhab",
+  "name": "Профессиональная психологическая помощь",
+  "icons": [
+    {
+      "src": "/images/manifest/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/manifest/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    // загрузить эти размеры
+//     16x16
+// 32x32
+// 48x48
+// 64x64
+// 128x128
+// 256x256
+    {
+      "src": "/images/manifest/icon-1023x1023.png",
+      "sizes": "1023x1023",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#9333ea",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -13,7 +13,7 @@
             {{-- <a href="{{ route('blog.index') }}" class="text-gray-600 hover:text-blue-600 transition-colors">Блог</a> --}}
             {{-- <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Контакты</a> --}}
         </nav>
-        <div class="flex items-center space-x-4">
+        {{-- <div class="flex items-center space-x-4">
             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 h-9 w-9 p-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-5 w-5">
                     <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
@@ -30,6 +30,6 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </header>

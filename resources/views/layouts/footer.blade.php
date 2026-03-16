@@ -41,8 +41,8 @@
 
                 <!-- Футер с кнопкой, открывающей модальное окно -->
                 <li>
-                    <a href="#" onclick="openPrivacyPolicy()"
-                        class="hover:text-blue-600 transition-colors block">Политика конфиденциальности</a>
+                    <a onclick="openPrivacyPolicy()"
+                        class="hover:text-blue-600 transition-colors block cursor-pointer">Политика конфиденциальности</a>
                 </li>
 
                 <!-- Модальное окно для отображения политики конфиденциальности -->
@@ -130,13 +130,17 @@
                 <script>
                     // Открываем модальное окно
                     function openPrivacyPolicy() {
+                        document.getElementById("privacy-modal").classList.remove("hidden");
                         document.getElementById("privacy-modal").classList.add("show-modal");
+                        document.getElementById("cookie-banner").classList.add("hidden");
                         document.body.classList.add("no-scroll"); // Запрет прокрутки основного окна
                     }
 
                     // Закрываем модальное окно
                     function closePrivacyPolicy() {
                         document.getElementById("privacy-modal").classList.remove("show-modal");
+                        document.getElementById("privacy-modal").classList.add("hidden");
+                        document.getElementById("cookie-banner").classList.remove("hidden");
                         document.body.classList.remove("no-scroll"); // Восстанавливаем прокрутку основного окна
                     }
                 </script>

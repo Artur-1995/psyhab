@@ -125,6 +125,7 @@ video {
     left: 50%;
     transform: translateX(-50%);
     max-width: 450px;
+    min-width: 290px;
     background-color: rgba(255, 255, 255, 0.9); /* Прозрачность фона */
     padding: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -139,6 +140,19 @@ video {
     text-align: center;
 }
 
+/* Стиль для элемента загрытия баннера */
+.close-btn {
+	position: absolute;
+    top: 6px;
+    padding: 8px 8px;
+    right: 6px;
+	display: inline-block;
+    touch-action: manipulation; /* Добавляем для корректной работы на тач-скринах */
+    cursor: pointer; /* Для ПК */
+    z-index: 9999;
+	background: url(https://snipp.ru/img/сlose.png) 0 0 no-repeat;
+}
+
 .agree-btn {
     margin-top: 10px;
     padding: 10px 20px;
@@ -146,7 +160,9 @@ video {
     color: white;
     border: none;
     border-radius: 0; /* Прямоугольные углы кнопки */
-    cursor: pointer;
+    touch-action: manipulation; /* Добавляем для корректной работы на тач-скринах */
+    cursor: pointer; /* Для ПК */
+    z-index: 9999;
     transition: background-color 0.3s;
 }
 
