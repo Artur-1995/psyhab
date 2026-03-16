@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'Главная | PSYHAB - психологическая помощь')
+{{-- @section('title', 'Главная | PSYHAB - психологическая помощь') --}}
 @section('content')
 
     <div class="min-h-screen bg-gray-50 py-8">
