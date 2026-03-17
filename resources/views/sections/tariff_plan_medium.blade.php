@@ -1,23 +1,23 @@
-<div class="text-center mb-12">
+{{-- <div class="text-center mb-12">
     <h2 class="text-3xl font-bold text-gray-900 mb-4">Выберите свой тариф</h2>
     <p class="text-gray-600 max-w-2xl mx-auto">Гибкие тарифные планы для различных потребностей. Все консультации
         проводятся опытными специалистами</p>
-</div>
+</div> --}}
 <div class="flex justify-center mb-8">
     <div class="inline-flex bg-gray-100 rounded-lg p-1"><button
-            class="tariff-button inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-3 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active-state hover:bg-gray-50 dark:hover:bg-gray-700" data-tariff-type="consultation">Консультация</button>
+            class="tariff-button inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-3 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active-state hover:bg-gray-50 dark:hover:bg-gray-700" data-tariff-medium-type="consultation-medium">Консультация</button>
             <button
             class="tariff-button inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-3 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 hover:bg-gray-50 dark:hover:bg-gray-700"
-            data-tariff-type="weekly_subscription_tariff">Подписка на
+            data-tariff-medium-type="weekly-subscription-tariff-medium">Подписка на
             неделю</button>
     </div>
 </div>
 
 <div class="max-w-3xl mx-auto px-40 mb-4">
-    <div id="formsContainer_tariff">
+    <div id="forms_container_tariff_medium">
     </div>
 </div>
-<div class="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto py-6">
+{{-- <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto py-6">
     <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-lg">
         <div data-slot="card-content" class="[&amp;:last-child]:pb-6 p-6 text-center">
             <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3"><svg
@@ -61,7 +61,7 @@
             <p class="text-sm text-gray-600">Персональная программа работы под ваши цели и задачи</p>
         </div>
     </div>
-</div>
+</div> --}}
 
 <style>
     .active-state {

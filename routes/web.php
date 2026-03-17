@@ -47,7 +47,7 @@ Route::post('/cookies-close', [CookieController::class, 'destroy'])->name('cooki
 Route::get('/tariff-info/{type}', [ApplicationController::class, 'tariffInfo'])->name('home.tariffInfo');
 
 // Тариф подписка на неделю
-Route::post('/consultation-form', [LoginController::class, 'consultationForm'])->name('home.consultationForm');
+// Route::post('/consultation-form', [LoginController::class, 'consultationForm'])->name('home.consultationForm');
 
 // Route::get('/auth', [LoginController::class, 'index'])->name('login');
 // // // Аутентификация пользователя

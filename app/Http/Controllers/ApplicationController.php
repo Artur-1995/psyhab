@@ -31,11 +31,27 @@ class ApplicationController extends Controller
 
     public function tariffInfo($type)
 {
+    $consultationTitle = 'Консультация';
+    $subscriptionTitle = 'Подписка на неделю';
     switch ($type) {
-        case 'consultation':
-            return view('sections.consultation_tariff');
-        case 'weekly_subscription_tariff':
-            return view(view: 'sections.weekly_subscription_tariff');
+        case 'consultation-light':
+            $price = '2500';
+            return view('sections.consultation_tariff', ['title' => $consultationTitle, 'price' => $price]);
+        case 'consultation-medium':
+            $price = '3500';
+            return view('sections.consultation_tariff', ['title' => $consultationTitle, 'price' => $price]);
+        case 'consultation-heavy':
+            $price = '4500';
+            return view('sections.consultation_tariff', ['title' => $consultationTitle, 'price' => $price]);
+        case 'weekly-subscription-tariff-light':
+            $price = '3500';
+            return view('sections.weekly_subscription_tariff', ['title' => $subscriptionTitle, 'price' => $price]);
+        case 'weekly-subscription-tariff-medium':
+            $price = '4500';
+            return view('sections.weekly_subscription_tariff', ['title' => $subscriptionTitle, 'price' => $price]);
+        case 'weekly_subscription_tariff-heavy':
+            $price = '5500';
+            return view('sections.weekly_subscription_tariff', ['title' => $subscriptionTitle, 'price' => $price]);
         default:
             throw new InvalidArgumentException("Неверный тип тарифа '$type'");
     }

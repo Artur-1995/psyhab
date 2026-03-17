@@ -36,8 +36,15 @@
     @include('sections.start_psychotherapy')
 </section>
 <section class="container mx-auto px-4 py-16">
-    @include('sections.tariff_plan')
+    @include('sections.tariff_plan_light')
 </section>
+<section class="container mx-auto px-4 py-16">
+    @include('sections.tariff_plan_medium')
+</section>
+<section class="container mx-auto px-4 py-16">
+    @include('sections.tariff_plan_heavy')
+</section>
+
 </div>
 
 <script>
@@ -93,36 +100,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Кнопки тарифов
-    document.querySelectorAll('.tariff-button').forEach(button => {
-        button.addEventListener('click', async function(event) {
-            event.preventDefault();
+document.querySelectorAll('.tariff-button').forEach(button => {
+    button.addEventListener('click', async function(event) {
+        event.preventDefault();
 
-            // Удаляем класс active-state у всех кнопок
-            document.querySelectorAll('.tariff-button').forEach(btn => btn.classList.remove('active-state'));
-            this.classList.add('active-state');
+        // Удаляем класс active-state у всех кнопок
+        document.querySelectorAll('.tariff-button').forEach(btn => btn.classList.remove('active-state'));
+        this.classList.add('active-state');
 
-            // Загрузка соответствующей формы тарифа
-            const tariffType = this.dataset.tariffType;
-            const formsContainerTariff = document.getElementById('formsContainer_tariff');
+        // Определяем тип тарифа и контейнер для формы
+        let tariffType = null;
+        let formsContainerTariff = null;
 
-            try {
-                const response = await fetch(`/tariff-info/${tariffType}`);
-                if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+        if (this.dataset.tariffLightType) {
+            tariffType = this.dataset.tariffLightType;
+            formsContainerTariff = document.getElementById('forms_container_tariff_light');
+        } else if (this.dataset.tariffMediumType) {
+            tariffType = this.dataset.tariffMediumType;
+            formsContainerTariff = document.getElementById('forms_container_tariff_medium');
+        } else if (this.dataset.tariffHeavyType) {
+            tariffType = this.dataset.tariffHeavyType;
+            formsContainerTariff = document.getElementById('forms_container_tariff_heavy');
+        }
 
-                formsContainerTariff.innerHTML = await response.text();
-                applyPhoneInputMask();
+        // Проверяем, что tariffType и контейнер существуют
+        if (!tariffType || !formsContainerTariff) {
+            console.error('Не удалось определить тип тарифа или найти контейнер');
+            return;
+        }
 
-                // Присоединяем обработчик отправки формы
-                const formRecordTariff = document.getElementById('form_record_tariff');
-                formRecordTariff?.addEventListener('submit', e => handleFormSubmit(e.target, '/submit-form'));
-            } catch (err) {
-                console.error(err);
+        try {
+            const response = await fetch(`/tariff-info/${tariffType}`);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`);
             }
-        });
+
+            const html = await response.text();
+            formsContainerTariff.innerHTML = html;
+
+            // Применяем маску для телефона после загрузки формы
+            if (typeof applyPhoneInputMask === 'function') {
+                applyPhoneInputMask();
+            }
+
+            // Присоединяем обработчик отправки формы
+            const formRecordTariff = document.getElementById('form_record_tariff');
+            if (formRecordTariff) {
+                // Удаляем старые обработчики, чтобы не накапливались
+                formRecordTariff.removeEventListener('submit', handleFormSubmit);
+                formRecordTariff.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (typeof handleFormSubmit === 'function') {
+                        handleFormSubmit(e.target, '/submit-form');
+                    }
+                });
+            }
+
+        } catch (err) {
+            console.error('Ошибка при загрузке формы:', err);
+        }
     });
+});
 
     // Автоматический клик по кнопке "Консультация" после загрузки страницы
-    document.querySelector('[data-tariff-type=consultation]').dispatchEvent(new Event('click', {'bubbles': true}));
+    document.querySelector('[data-tariff-light-type=consultation-light]').dispatchEvent(new Event('click', {'bubbles': true}));
+
+    // Автоматический клик по кнопке "Консультация" после загрузки страницы
+    document.querySelector('[data-tariff-medium-type=consultation-medium]').dispatchEvent(new Event('click', {'bubbles': true}));
+
+    // Автоматический клик по кнопке "Консультация" после загрузки страницы
+    document.querySelector('[data-tariff-heavy-type=consultation-heavy]').dispatchEvent(new Event('click', {'bubbles': true}));
 });
 </script>
 

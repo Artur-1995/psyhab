@@ -4,7 +4,7 @@
     <div class="bg-custom-color hover:bg-custom-color-darker p-8 text-white">
         <div class="flex items-start justify-between mb-4">
             <div>
-                <h3 class="text-3xl font-bold mb-2">Подписка на неделю</h3>
+                <h3 class="text-3xl font-bold mb-2">{!! $title !!}</h3>
                 <p class="opacity-90">Консультация + постоянная поддержка в течение недели</p>
             </div><span
                 class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap border-transparent dark:bg-gray-800 dark:text-gray-100 bg-white text-blue-600 bg-gradient-to-r from-blue-600 to-purple-600 text-white"><svg
@@ -16,7 +16,7 @@
                     </path>
                 </svg>Рекомендуем</span>
         </div>
-        <div class="flex items-baseline gap-2"><span class="text-5xl font-bold">3 500</span><span
+        <div class="flex items-baseline gap-2"><span class="text-5xl font-bold">{!! $price !!}</span><span
                 class="text-5xl font-bold">₽</span></div>
         <p class="opacity-90 mt-2">на 7 дней</p>
     </div>

@@ -1,2 +1,57 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /profile
+Disallow: /api/
+Disallow: /cart
+Disallow: /checkout
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.log$
+Allow: /
+
+# Для поисковых роботов Yandex
+User-agent: Yandex
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /api/
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# Для Google
+User-agent: Googlebot
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /api/
+Allow: /
+
+# Для Mail.ru
+User-agent: Mail.Ru
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /api/
+Allow: /
+
+# Указываем путь к карте сайта
+Sitemap: https://psyhab.ru/sitemap.xml
+
+# Указываем главное зеркало сайта
+Host: https://psyhab.ru
+
+# Для защиты от парсинга
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /

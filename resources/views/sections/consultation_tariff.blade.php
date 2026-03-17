@@ -4,12 +4,12 @@
     <div class="bg-custom-color hover:bg-custom-color-darker p-8 text-white">
         <div class="flex items-start justify-between mb-4">
             <div>
-                <h3 class="text-3xl font-bold mb-2">Консультация</h3>
-                <p class="opacity-90">Индивидуальная консультация с психологом онлайн</p>
+                <h3 class="text-3xl font-bold mb-2">{!! $title !!}</h3>
+                <p class="opacity-90">Индивидуальная консультация с психологом онлайн, опыт работы до 6 лет</p>
             </div>
         </div>
         <div class="flex items-baseline gap-2">
-            <span class="text-5xl font-bold">2 500</span>
+            <span class="text-5xl font-bold">{!! $price !!}</span>
             <span class="text-5xl font-bold">₽</span>
         </div>
         <p class="opacity-90 mt-2">разовая оплата</p>
